@@ -287,6 +287,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; color: var
   gap: 0.5rem;
   box-shadow: var(--shadow-lg);
   padding: 1rem;
+  object-fit: cover;
+  overflow: hidden;
 }
 .portrait-frame svg { width: 46%; opacity: 0.55; }
 .portrait-caption {
