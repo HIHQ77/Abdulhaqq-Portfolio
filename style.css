@@ -274,7 +274,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; color: var
   gap: 0.9rem;
   animation: fade-up 700ms var(--transition) both;
 }
-.portrait-frame {
+.portrait-frame img{
   width: min(280px, 70vw);
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
@@ -286,11 +286,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; color: var
   text-align: center;
   gap: 0.5rem;
   box-shadow: var(--shadow-lg);
-  /* padding: 1rem; */
-}
-
-.potrait-frame img{
-  width:100%;
+  padding: 1rem;
 }
 .portrait-frame svg { width: 46%; opacity: 0.55; }
 .portrait-caption {
