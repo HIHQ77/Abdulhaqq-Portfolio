@@ -274,7 +274,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; color: var
   gap: 0.9rem;
   animation: fade-up 700ms var(--transition) both;
 }
-.portrait-frame img{
+.portrait-frame{
   width: min(280px, 70vw);
   aspect-ratio: 4 / 5;
   border-radius: var(--radius);
