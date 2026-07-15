@@ -280,7 +280,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; color: var
   border-radius: var(--radius);
   background: var(--panel);
   border: 3px solid rgba(16,185,129,0.5);
-  display: grid;
+  display: flex;
   place-items: center;
   color: var(--ink-soft);
   text-align: center;
