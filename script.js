@@ -1,14 +1,3 @@
-/* ==========================================================================
-   COS 106 Student Portfolio — script.js
-   Sections:
-     1. Mobile navigation toggle (all pages)
-     2. Academic Planner logic (planner.html)
-     3. Contact form validation (contact.html)
-   ========================================================================== */
-
-/* ---------------------------------------------------------------------
-   1. MOBILE NAVIGATION TOGGLE
-   -------------------------------------------------------------------- */
 function initNavToggle() {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
@@ -19,7 +8,6 @@ function initNavToggle() {
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // Close the mobile menu when a link is chosen
   links.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       links.classList.remove('open');
@@ -28,14 +16,9 @@ function initNavToggle() {
   });
 }
 
-/* ---------------------------------------------------------------------
-   2. ACADEMIC PLANNER
-   Tasks are kept in a plain JS array (in-memory only — no storage APIs
-   are used, per browser-storage restrictions in this environment).
-   -------------------------------------------------------------------- */
 function initPlanner() {
   const form = document.querySelector('#task-form');
-  if (!form) return; // Not on the planner page
+  if (!form) return;
 
   const titleInput = document.querySelector('#task-title');
   const courseInput = document.querySelector('#task-course');
@@ -49,11 +32,10 @@ function initPlanner() {
 
   /** @type {{id: number, title: string, course: string, priority: string, completed: boolean}[]} */
   let tasks = [
-    { id: 1, title: 'Finish Chapter 4 reading response', course: 'ENG-210', priority: 'medium', completed: false },
-    { id: 2, title: 'Submit COS 106 portfolio project', course: 'COS-106', priority: 'high', completed: false },
-    { id: 3, title: 'Review lecture notes for quiz', course: 'MATH-221', priority: 'low', completed: true },
+    { id: 1, title: 'Submit COS 106 portfolio project', course: 'COS-106', priority: 'high', completed: false },
+    { id: 2, title: 'Review lecture notes for quiz', course: 'MATH-102', priority: 'low', completed: true },
   ];
-  let nextId = 4;
+  let nextId = 3;
   let activeFilter = 'all';
 
   function render() {
@@ -164,7 +146,7 @@ function initPlanner() {
    -------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.querySelector('#contact-form');
-  if (!form) return; // Not on the contact page
+  if (!form) return; 
 
   const fields = {
     name: document.querySelector('#field-name'),
@@ -191,7 +173,7 @@ function initContactForm() {
       return false;
     }
     if (field.id === 'field-email' && !EMAIL_RE.test(value)) {
-      setError(field, 'Enter a valid email address (e.g. name@example.com).');
+      setError(field, 'Enter a valid email address.');
       return false;
     }
     if (field.id === 'field-phone' && !PHONE_RE.test(value)) {
@@ -225,7 +207,7 @@ function initContactForm() {
       return;
     }
 
-    status.textContent = 'Message sent! Thanks for reaching out — I\u2019ll reply within a couple of days.';
+    status.textContent = 'Message sent! Thanks for reaching out — I will reply when available.';
     status.classList.add('show', 'success');
     form.reset();
   });
