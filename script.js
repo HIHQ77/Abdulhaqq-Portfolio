@@ -138,12 +138,6 @@ function initPlanner() {
   render();
 }
 
-/* ---------------------------------------------------------------------
-   3. CONTACT FORM VALIDATION
-   Validates: no empty fields, valid email format, digits-only phone.
-   Shows inline error messages and an on-screen success notice instead
-   of using alert().
-   -------------------------------------------------------------------- */
 function initContactForm() {
   const form = document.querySelector('#contact-form');
   if (!form) return; 
@@ -184,7 +178,6 @@ function initContactForm() {
     return true;
   }
 
-  // Live validation as the user leaves each field
   Object.values(fields).forEach((field) => {
     field.addEventListener('blur', () => validateField(field));
     field.addEventListener('input', () => {
@@ -213,9 +206,6 @@ function initContactForm() {
   });
 }
 
-/* ---------------------------------------------------------------------
-   Init
-   -------------------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
   initPlanner();
